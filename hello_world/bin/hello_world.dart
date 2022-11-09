@@ -8,11 +8,22 @@ String prompt(String promptText) {
 }
 
 void main() {
-  String color = prompt("Color");
-  String noun = prompt("Plural Noun");
-  String celeb = prompt("Celebrity name");
+  print("Enter the opcode (+. -, *, /): ");
+  String opcode = stdin.readLineSync()!;
+  print("Enter operand1: ");
+  int num1 = int.parse(stdin.readLineSync()!);
+  print("Enter operand2: ");
+  int num2 = int.parse(stdin.readLineSync()!);
 
-  print("Roses are $color");
-  print("$noun are blue");
-  print("I love $celeb");
+  if (opcode == "+") {
+    print("The sum is ${num1 + num2}");
+  } else if (opcode == "-") {
+    print("The subtraction is ${num1 - num2}");
+  } else if (opcode == "*") {
+    print("The multiplication is ${num1 * num2}");
+  } else if (opcode == "/") {
+    print("The division is ${num1 / num2}");
+  } else {
+    print("The opcode $opcode is not known! Please enter a valid opcode.");
+  }
 }
