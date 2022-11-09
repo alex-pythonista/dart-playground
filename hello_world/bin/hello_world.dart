@@ -1,16 +1,17 @@
 import 'dart:math';
 import 'dart:io';
 
-String prompt(String promptText) {
-  print("$promptText: ");
-  String answer = stdin.readLineSync()!;
-  return answer;
+class Book {
+  String? title;
+  String? author;
+  int? pages;
 }
 
 void main() {
-  List<String> friends = ["Arman", "Delu", "Shehab", "Rabby"];
+  Book harryPotter = Book();
+  harryPotter.title = "Harry Potter and Goblet of fire";
+  harryPotter.author = "J K Rowling";
+  harryPotter.pages = 300;
 
-  for (int i = 0; i < friends.length; i++) {
-    print(friends[i]);
-  }
+  print(harryPotter.pages);
 }
