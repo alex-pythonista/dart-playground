@@ -31,7 +31,7 @@ void main() {
   for (MathQuestion mq in questions) {
     double ans = doublePrompt(mq.question);
     if (ans == mq.answer) {
-      score += 1;
+      score++;
       print("Great!!!");
     } else {
       print("Wrong!! The correct answer is ${mq.answer}");
