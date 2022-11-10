@@ -15,6 +15,15 @@ class MathQuestion {
     this.question = aQuestion;
     this.answer = aAnswer;
   }
+  bool checkAnswer(double ans) {
+    if (ans == this.answer) {
+      print("Great!!!");
+      return true;
+    } else {
+      print("Wrong!! The correct answer is ${this.answer}");
+      return false;
+    }
+  }
 }
 
 void main() {
@@ -27,14 +36,12 @@ void main() {
     MathQuestion("7.5 + 2. 5 = ?", 10),
     MathQuestion("87 + 3.65 = ?", 90.65)
   ];
+
   int score = 0;
   for (MathQuestion mq in questions) {
     double ans = doublePrompt(mq.question);
-    if (ans == mq.answer) {
+    if (mq.checkAnswer(ans) == true) {
       score++;
-      print("Great!!!");
-    } else {
-      print("Wrong!! The correct answer is ${mq.answer}");
     }
   }
 
