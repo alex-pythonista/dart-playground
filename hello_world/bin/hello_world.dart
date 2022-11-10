@@ -1,17 +1,26 @@
+// ignore_for_file: unnecessary_this
+
 import 'dart:math';
 import 'dart:io';
 
-class Book {
-  String? title;
-  String? author;
-  int? pages;
+class Student {
+  String? name;
+  double? gpa;
+
+  Student(String aName, double aGpa) {
+    this.name = aName;
+    this.gpa = aGpa;
+  }
+
+  bool hasHonors() {
+    return this.gpa! >= 3.5;
+  }
 }
 
 void main() {
-  Book harryPotter = Book();
-  harryPotter.title = "Harry Potter and Goblet of fire";
-  harryPotter.author = "J K Rowling";
-  harryPotter.pages = 300;
+  Student jim = Student("Jim", 2.5);
+  Student pim = Student("Pim", 3.5);
 
-  print(harryPotter.pages);
+  print(jim.hasHonors());
+  print(pim.hasHonors());
 }
